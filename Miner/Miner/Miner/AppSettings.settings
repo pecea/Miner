@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Miner" GeneratedClassName="AppSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ResolutionX" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1200</Value>
+    </Setting>
+    <Setting Name="ResolutionY" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">600</Value>
+    </Setting>
+    <Setting Name="StagesPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">..\..\..\..\MinerContent\StageLevels\</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

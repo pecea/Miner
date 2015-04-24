@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miner", "Miner\Miner\Miner.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinerContent", "Miner\MinerContent\MinerContent.contentproj", "{C7093BD0-5C52-4108-8EE8-17FE209A49EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "Engine\Engine.csproj", "{B95258AA-E93E-45C3-9BE6-6470B3A031CD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StageSerializer", "StageSerializer\StageSerializer.csproj", "{639D5D22-F5AF-4E2C-B100-2BA83B014C9A}"
 EndProject
 Global
@@ -37,16 +35,6 @@ Global
 		{C7093BD0-5C52-4108-8EE8-17FE209A49EC}.Release|Any CPU.ActiveCfg = Release|x86
 		{C7093BD0-5C52-4108-8EE8-17FE209A49EC}.Release|Mixed Platforms.ActiveCfg = Release|x86
 		{C7093BD0-5C52-4108-8EE8-17FE209A49EC}.Release|x86.ActiveCfg = Release|x86
-		{B95258AA-E93E-45C3-9BE6-6470B3A031CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B95258AA-E93E-45C3-9BE6-6470B3A031CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B95258AA-E93E-45C3-9BE6-6470B3A031CD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{B95258AA-E93E-45C3-9BE6-6470B3A031CD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{B95258AA-E93E-45C3-9BE6-6470B3A031CD}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{B95258AA-E93E-45C3-9BE6-6470B3A031CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B95258AA-E93E-45C3-9BE6-6470B3A031CD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B95258AA-E93E-45C3-9BE6-6470B3A031CD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{B95258AA-E93E-45C3-9BE6-6470B3A031CD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{B95258AA-E93E-45C3-9BE6-6470B3A031CD}.Release|x86.ActiveCfg = Release|Any CPU
 		{639D5D22-F5AF-4E2C-B100-2BA83B014C9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{639D5D22-F5AF-4E2C-B100-2BA83B014C9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{639D5D22-F5AF-4E2C-B100-2BA83B014C9A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU

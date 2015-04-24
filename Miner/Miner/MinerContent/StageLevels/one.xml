@@ -4,7 +4,7 @@
     <X>1200</X>
     <Y>600</Y>
   </Size>
-  <Player X="300" Y="250" Texture="Textures\Player\player">
+  <Player X="530" Y="250" Texture="Textures\Player\player">
     <Shape>
       <Vertices>
         <X>0</X>
@@ -21,6 +21,46 @@
     </Shape>
   </Player>
   <Terrain>
+    <GameObjectInitializer X="-32" Y="536" Texture="Textures\terrain">
+      <Shape>
+        <Vertices>
+          <X>0</X>
+          <Y>0</Y>
+        </Vertices>
+        <Vertices>
+          <X>0</X>
+          <Y>32</Y>
+        </Vertices>
+        <Vertices>
+          <X>32</X>
+          <Y>32</Y>
+        </Vertices>
+        <Vertices>
+          <X>32</X>
+          <Y>0</Y>
+        </Vertices>
+      </Shape>
+    </GameObjectInitializer>
+    <GameObjectInitializer X="-32" Y="568" Texture="Textures\terrain">
+      <Shape>
+        <Vertices>
+          <X>0</X>
+          <Y>0</Y>
+        </Vertices>
+        <Vertices>
+          <X>0</X>
+          <Y>32</Y>
+        </Vertices>
+        <Vertices>
+          <X>32</X>
+          <Y>32</Y>
+        </Vertices>
+        <Vertices>
+          <X>32</X>
+          <Y>0</Y>
+        </Vertices>
+      </Shape>
+    </GameObjectInitializer>
     <GameObjectInitializer X="0" Y="568" Texture="Textures\terrain">
       <Shape>
         <Vertices>

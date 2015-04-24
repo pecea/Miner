@@ -1,6 +1,3 @@
-using System;
-using Engine;
-
 namespace Miner
 {
 #if WINDOWS || XBOX
@@ -11,7 +8,7 @@ namespace Miner
         /// </summary>
         static void Main(string[] args)
         {
-            using (var game = new Engine.Miner())
+            using (var game = new Miner())
             {
                 game.Run();
             }

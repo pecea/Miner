@@ -49,9 +49,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Engine\Engine.csproj">
-      <Project>{b95258aa-e93e-45c3-9be6-6470b3a031cd}</Project>
-      <Name>Engine</Name>
+    <ProjectReference Include="..\Miner\Miner\Miner.csproj">
+      <Project>{adf280b0-5f56-40c8-aca0-4078515a07a2}</Project>
+      <Name>Miner</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

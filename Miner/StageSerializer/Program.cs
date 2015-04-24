@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
-using Engine;
-using Engine.ContentInitializers;
 using Microsoft.Xna.Framework;
+using Miner;
+using Miner.ContentInitializers;
 
 namespace StageSerializer
 {
