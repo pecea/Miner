@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miner", "Miner\Miner\Miner.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinerContent", "Miner\MinerContent\MinerContent.contentproj", "{C7093BD0-5C52-4108-8EE8-17FE209A49EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "MyDataTypes\Engine.csproj", "{B95258AA-E93E-45C3-9BE6-6470B3A031CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "Engine\Engine.csproj", "{B95258AA-E93E-45C3-9BE6-6470B3A031CD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StageSerializer", "StageSerializer\StageSerializer.csproj", "{639D5D22-F5AF-4E2C-B100-2BA83B014C9A}"
 EndProject

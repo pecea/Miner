@@ -37,7 +37,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MyDataTypes\Engine.csproj">
+    <ProjectReference Include="..\..\Engine\Engine.csproj">
       <Project>{b95258aa-e93e-45c3-9be6-6470b3a031cd}</Project>
       <Name>Engine</Name>
     </ProjectReference>
@@ -47,6 +47,7 @@
       <Name>one</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>

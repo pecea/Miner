@@ -49,7 +49,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MyDataTypes\Engine.csproj">
+    <ProjectReference Include="..\Engine\Engine.csproj">
       <Project>{b95258aa-e93e-45c3-9be6-6470b3a031cd}</Project>
       <Name>Engine</Name>
     </ProjectReference>
