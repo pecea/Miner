@@ -1,4 +1,5 @@
 using System;
+using Engine;
 
 namespace Miner
 {
@@ -10,7 +11,7 @@ namespace Miner
         /// </summary>
         static void Main(string[] args)
         {
-            using (Game1 game = new Game1())
+            using (var game = new Engine.Miner())
             {
                 game.Run();
             }
