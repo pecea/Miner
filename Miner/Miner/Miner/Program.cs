@@ -8,7 +8,7 @@ namespace Miner
         /// </summary>
         static void Main(string[] args)
         {
-            using (var game = new Miner())
+            using (var game = new MinerGame())
             {
                 game.Run();
             }

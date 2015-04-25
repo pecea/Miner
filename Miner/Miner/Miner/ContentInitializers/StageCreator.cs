@@ -1,26 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
-using Miner.Factory;
 using Miner.GameObjects;
 
 namespace Miner.ContentInitializers
 {
     [XmlRoot]
     [Serializable]
-    public class StageInitializer
+    public class StageCreator
     {
-        private PlayerFactory _playerFactory;
-        private TerrainFactory _terrainFactory;
-
-        public StageInitializer()
-        {
-            _playerFactory = new PlayerFactory();
-            _terrainFactory = new TerrainFactory();
-        }
-
         [XmlElement]
         public Vector2 Size { get; set; }
 
@@ -30,25 +21,29 @@ namespace Miner.ContentInitializers
         [XmlArray]
         public GameObjectInitializer[] Terrain { get; set; }
 
-        public static Stage Initialize(Game game, StageLevel level)
+        public static Stage Create(MinerGame game, StageLevel level)
         {
             Stage stage;
-            XmlSerializer serializer = new XmlSerializer(typeof(StageInitializer));
+            XmlSerializer serializer = new XmlSerializer(typeof(StageCreator));
 
             using (var reader = new StreamReader(GetStageFilePath(level)))
             {
-                stage = ((StageInitializer)serializer.Deserialize(reader)).ToStage(game, level);
+                var creator = (StageCreator) serializer.Deserialize(reader);
+                var objects = creator.LoadGameObjects(game, level);
+                stage = new Stage(game, level, creator.Size, objects);
             }
 
             return stage;
         }
 
-        private Stage ToStage(Game game, StageLevel level)
+        private IEnumerable<GameObject> LoadGameObjects(MinerGame game, StageLevel level)
         {
-            var player = _playerFactory.Create(game, Player.Texture, Player.Position, Player.Shape) as Player;
-            var terrain = Terrain.Select(t => _terrainFactory.Create(game, t.Texture, t.Position, t.Shape));
+            var gameObjectsList = new List<GameObject>();
 
-            return new Stage(game, level, Size, player, terrain);
+            gameObjectsList.AddRange(Terrain.Select(t => new Terrain(game, t)));
+            gameObjectsList.Add(new Player(game, Player));
+
+            return gameObjectsList;
         }
 
         private static string GetStageFilePath(StageLevel stageLevel)

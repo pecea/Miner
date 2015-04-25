@@ -1,12 +1,18 @@
 ﻿using Microsoft.Xna.Framework;
+using Miner.ContentInitializers;
 using Miner.GameObjects.Components;
 
 namespace Miner.GameObjects
 {
     public abstract class MovableGameObject : GameObject
     {
-        protected MovableGameObject(Game game) 
+        protected MovableGameObject(MinerGame game) 
             : base(game)
+        {
+        }
+
+        protected MovableGameObject(MinerGame game, GameObjectInitializer initializer)
+            : base(game, initializer)
         {
         }
 

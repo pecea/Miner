@@ -79,14 +79,8 @@
     </Compile>
     <Compile Include="Camera\Camera2D.cs" />
     <Compile Include="ContentInitializers\GameObjectInitializer.cs" />
-    <Compile Include="ContentInitializers\StageInitializer.cs" />
-    <Compile Include="Controllers\Controller.cs" />
-    <Compile Include="Controllers\GameController.cs" />
-    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="ContentInitializers\StageCreator.cs" />
     <Compile Include="Direction.cs" />
-    <Compile Include="Factory\IGameObjectFactory.cs" />
-    <Compile Include="Factory\PlayerFactory.cs" />
-    <Compile Include="Factory\TerrainFactory.cs" />
     <Compile Include="GameObjects\Components\DrawingComponent.cs" />
     <Compile Include="GameObjects\Components\Component.cs" />
     <Compile Include="GameObjects\Components\InputComponent.cs" />
@@ -100,7 +94,7 @@
     <Compile Include="Camera\ICamera2D.cs" />
     <Compile Include="Camera\IFocusable.cs" />
     <Compile Include="KeyboardStateManager.cs" />
-    <Compile Include="Miner.cs" />
+    <Compile Include="MinerGame.cs" />
     <Compile Include="Polygon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />

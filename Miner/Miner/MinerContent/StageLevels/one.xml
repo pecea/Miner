@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<StageInitializer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<StageCreator xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Size>
     <X>1200</X>
     <Y>600</Y>
@@ -1254,4 +1254,4 @@
       </Shape>
     </GameObjectInitializer>
   </Terrain>
-</StageInitializer>
+</StageCreator>

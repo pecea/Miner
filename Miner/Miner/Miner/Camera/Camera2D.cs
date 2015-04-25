@@ -6,12 +6,13 @@ namespace Miner.Camera
     public class Camera2D : GameComponent, ICamera2D
     {
         private Vector2 _position;
-        protected float _viewportHeight;
-        protected float _viewportWidth;
+        protected float ViewportHeight;
+        protected float ViewportWidth;
 
-        public Camera2D(Game game)
+        public Camera2D(Game game, IFocusable focus)
             : base(game)
         {
+            Focus = focus;
         }
 
         #region Properties
@@ -36,11 +37,12 @@ namespace Miner.Camera
         /// </summary>
         public override void Initialize()
         {
-            _viewportWidth = Game.GraphicsDevice.Viewport.Width;
-            _viewportHeight = Game.GraphicsDevice.Viewport.Height;
+            ViewportWidth = Game.GraphicsDevice.Viewport.Width;
+            ViewportHeight = Game.GraphicsDevice.Viewport.Height;
 
-            ScreenCenter = new Vector2(_viewportWidth / 2, _viewportHeight / 2);
+            ScreenCenter = new Vector2(ViewportWidth / 2, ViewportHeight / 2);
             Position = Focus.Center;
+
             Scale = 1;
             MoveSpeed = 2f;
 

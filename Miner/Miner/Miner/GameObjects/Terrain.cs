@@ -1,11 +1,11 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Miner.ContentInitializers;
 
 namespace Miner.GameObjects
 {
     public class Terrain : GameObject
     {
-        public Terrain(Game game) 
-            : base(game)
+        public Terrain(MinerGame game, GameObjectInitializer initializer)
+            : base(game, initializer)
         {
         }
     }

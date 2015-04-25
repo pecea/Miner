@@ -9,6 +9,7 @@ namespace Miner.GameObjects.Components
             : base(gameObject)
         {
         }
+
         protected new MovableGameObject GameObject { get { return base.GameObject as MovableGameObject; } }
 
         protected void Move(Direction direction, float delta)

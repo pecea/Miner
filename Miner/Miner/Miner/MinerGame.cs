@@ -1,24 +1,23 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Miner.Camera;
 using Miner.ContentInitializers;
-using Miner.Controllers;
 
 namespace Miner
 {
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class Miner : Game
+    public class MinerGame : Game
     {
         GraphicsDeviceManager _graphics;
-        SpriteBatch _spriteBatch;
+        readonly Color _backgroundColor = new Color(6, 0, 26);
 
-        GameController _game;
-        MenuController _menu;
-        Controller _activeController;
+        public SpriteBatch SpriteBatch { get; set; }
+        public Camera2D Camera { get; set; }
 
-        public Miner()
+        public MinerGame()
         {
             _graphics = new GraphicsDeviceManager(this)
             {
@@ -37,11 +36,13 @@ namespace Miner
         /// </summary>
         protected override void Initialize()
         {
-            _activeController = _game = new GameController(this, StageLevel.One);
-            _menu = new MenuController(this);
+            SpriteBatch = new SpriteBatch(GraphicsDevice);
 
-            Components.Add(_game);
-            Components.Add(_menu);
+            var stage = StageCreator.Create(this, StageLevel.One);
+            Camera = new Camera2D(this, stage.Player.Drawing);
+
+            Components.Add(stage);
+            Components.Add(Camera);
 
             base.Initialize();
         }
@@ -52,9 +53,7 @@ namespace Miner
         /// </summary>
         protected override void LoadContent()
         {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            base.LoadContent();
+            // TODO: Load any ContentManager content here
         }
 
         /// <summary>
@@ -88,11 +87,11 @@ namespace Miner
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(new Color(6, 0, 26));
+            GraphicsDevice.Clear(_backgroundColor);
             
-            _activeController.Draw(_spriteBatch);
-
+            SpriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearClamp, DepthStencilState.None, RasterizerState.CullCounterClockwise, null, Camera.Transform);
             base.Draw(gameTime);
+            SpriteBatch.End();
         }
     }
 }
