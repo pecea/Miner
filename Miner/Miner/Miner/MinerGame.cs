@@ -14,6 +14,7 @@ namespace Miner
         GraphicsDeviceManager _graphics;
         readonly Color _backgroundColor = new Color(6, 0, 26);
 
+        public SpriteFont Font { get; set; }
         public SpriteBatch SpriteBatch { get; set; }
         public Camera2D Camera { get; set; }
 
@@ -53,6 +54,7 @@ namespace Miner
         /// </summary>
         protected override void LoadContent()
         {
+            Font = Content.Load<SpriteFont>("Font");
             // TODO: Load any ContentManager content here
         }
 

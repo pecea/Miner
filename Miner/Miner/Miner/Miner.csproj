@@ -84,6 +84,7 @@
     <Compile Include="GameObjects\Components\DrawingComponent.cs" />
     <Compile Include="GameObjects\Components\Component.cs" />
     <Compile Include="GameObjects\Components\InputComponent.cs" />
+    <Compile Include="GameObjects\Components\MovablePhysicsComponent.cs" />
     <Compile Include="GameObjects\Components\NpcInputComponent.cs" />
     <Compile Include="GameObjects\Components\PhysicsComponent.cs" />
     <Compile Include="GameObjects\Components\PlayerInputComponent.cs" />

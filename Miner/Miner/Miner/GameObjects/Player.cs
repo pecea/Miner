@@ -9,6 +9,7 @@ namespace Miner.GameObjects
             : base(game, initializer)
         {
             Input = new PlayerInputComponent(this, 700f);
+            Airborne = true;
         }
     }
 }

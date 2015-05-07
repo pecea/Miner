@@ -8,34 +8,38 @@ namespace Miner.GameObjects.Components
         protected InputComponent(GameObject gameObject)
             : base(gameObject)
         {
+            GameObject = (MovableGameObject) gameObject;
         }
 
-        protected new MovableGameObject GameObject { get { return base.GameObject as MovableGameObject; } }
+        protected new MovableGameObject GameObject { get; set; }
+        protected bool Moved { get; set; }
 
         protected void Move(Direction direction, float delta)
         {
             switch (direction)
             {
                 case Direction.Left:
-                    GameObject.Position = new Vector2(GameObject.Position.X - (GameObject.MoveSpeed * delta), GameObject.Position.Y);
+                    GameObject.Speed = new Vector2(-(GameObject.MoveSpeedX * delta), GameObject.Speed.Y);
                     break;
                 case Direction.Right:
-                    GameObject.Position = new Vector2(GameObject.Position.X + (GameObject.MoveSpeed * delta), GameObject.Position.Y);
-                    break;
-                case Direction.Up:
-                    GameObject.Position = new Vector2(GameObject.Position.X, GameObject.Position.Y - (GameObject.MoveSpeed * delta));
-                    break;
-                case Direction.Down:
-                    GameObject.Position = new Vector2(GameObject.Position.X, GameObject.Position.Y + (GameObject.MoveSpeed * delta));
+                    GameObject.Speed = new Vector2(GameObject.MoveSpeedX * delta, GameObject.Speed.Y);    
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("direction");
             }
+            Moved = true;
         }
 
-        protected Vector2 Jump()
+        protected void Jump()
         {
-            throw new NotImplementedException();
+            GameObject.Airborne = true;
+            GameObject.Speed = new Vector2(GameObject.Speed.X, GameObject.Speed.Y - MovableGameObject.JumpStartSpeed);
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            GameObject.Moving = Moved;
+            Moved = false;
         }
     }
 }

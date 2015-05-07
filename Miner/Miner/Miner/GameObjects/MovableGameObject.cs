@@ -6,18 +6,22 @@ namespace Miner.GameObjects
 {
     public abstract class MovableGameObject : GameObject
     {
-        protected MovableGameObject(MinerGame game) 
-            : base(game)
-        {
-        }
+        public const float JumpStartSpeed = 12;
+        public const float GravityAccelecation = 0.5f;
+        public const float MaxGravitySpeed = 8;
+        public const float DeceleratingSpeed = 1;
 
         protected MovableGameObject(MinerGame game, GameObjectInitializer initializer)
             : base(game, initializer)
         {
+            Physics = new MovablePhysicsComponent(this);
         }
 
+        public Vector2 Speed { get; set; }
         public InputComponent Input { get; set; }
-        public float MoveSpeed { get; set; }
+        public float MoveSpeedX { get; set; }
+        public bool Airborne { get; set; }
+        public bool Moving { get; set; }
 
         public override void Update(GameTime gameTime)
         {
