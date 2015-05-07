@@ -9,11 +9,13 @@ namespace Miner.GameObjects.Components
     public class DrawingComponent : Component, IFocusable
     {
         private readonly SpriteBatch _spriteBatch;
+        public static string Text { get; set; }
 
         public DrawingComponent(GameObject gameObject, SpriteBatch spriteBatch)
             : base(gameObject)
         {
             _spriteBatch = spriteBatch;
+            Text = String.Empty;
         }
 
         public Texture2D Texture { get; set; }
@@ -26,6 +28,7 @@ namespace Miner.GameObjects.Components
 
         public override void Update(GameTime gameTime)
         {
+            Text = "";
         }
 
         public void Draw(GameTime gameTime)
@@ -33,8 +36,9 @@ namespace Miner.GameObjects.Components
             var o = GameObject as Player;
             if (o != null)
             {
-                var str = String.Format("X: {0}, Y: {1}", o.Speed.X.ToString(CultureInfo.InvariantCulture), o.Speed.Y.ToString(CultureInfo.InvariantCulture));
-                _spriteBatch.DrawString(((MinerGame)o.Game).Font, str, new Vector2(o.Position.X - 40, o.Position.Y - 40), Color.White);
+                var str = Text;
+                //var str = String.Format("X: {0}, Y: {1}", o.Speed.X.ToString(CultureInfo.InvariantCulture), o.Speed.Y.ToString(CultureInfo.InvariantCulture));
+                _spriteBatch.DrawString(o.Game.Font, str, new Vector2(o.Position.X - 40, o.Position.Y - 40), Color.White);
             }
             _spriteBatch.Draw(Texture, GameObject.Position, null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
         }

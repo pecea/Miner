@@ -8,15 +8,31 @@
     <Shape>
       <Vertices>
         <X>0</X>
-        <Y>0</Y>
+        <Y>32</Y>
       </Vertices>
       <Vertices>
-        <X>0</X>
-        <Y>10</Y>
+        <X>3</X>
+        <Y>20</Y>
       </Vertices>
       <Vertices>
-        <X>10</X>
-        <Y>0</Y>
+        <X>34</X>
+        <Y>1</Y>
+      </Vertices>
+      <Vertices>
+        <X>93</X>
+        <Y>20</Y>
+      </Vertices>
+      <Vertices>
+        <X>97</X>
+        <Y>48</Y>
+      </Vertices>
+      <Vertices>
+        <X>38</X>
+        <Y>68</Y>
+      </Vertices>
+      <Vertices>
+        <X>3</X>
+        <Y>45</Y>
       </Vertices>
     </Shape>
   </Player>

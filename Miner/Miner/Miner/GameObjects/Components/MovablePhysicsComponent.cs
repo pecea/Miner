@@ -26,13 +26,13 @@ namespace Miner.GameObjects.Components
                 GameObject.Speed = new Vector2(GameObject.Speed.X, GameObject.Speed.Y + MovableGameObject.GravityAccelecation);
                 GameObject.Position = new Vector2(GameObject.Position.X, GameObject.Position.Y + GameObject.Speed.Y);
 
-                // stop falling if ground reached
+                /*// stop falling if ground reached
                 if (GameObject.Position.Y >= 500)
                 {
                     GameObject.Position = new Vector2(GameObject.Position.X, 500);
                     GameObject.Speed = new Vector2(GameObject.Speed.X, 0);
                     GameObject.Airborne = false;
-                }
+                }*/
             }
         }
 

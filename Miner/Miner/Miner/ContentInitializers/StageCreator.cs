@@ -40,8 +40,8 @@ namespace Miner.ContentInitializers
         {
             var gameObjectsList = new List<GameObject>();
 
-            gameObjectsList.AddRange(Terrain.Select(t => new Terrain(game, t)));
             gameObjectsList.Add(new Player(game, Player));
+            gameObjectsList.AddRange(Terrain.Select(t => new Terrain(game, t)));
 
             return gameObjectsList;
         }
