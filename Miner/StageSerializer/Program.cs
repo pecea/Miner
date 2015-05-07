@@ -14,7 +14,7 @@ namespace StageSerializer
             XmlSerializer serializer = new XmlSerializer(typeof(StageCreator));
             var stage = new StageCreator()
             {
-                Player = new GameObjectInitializer { X = 0, Y = 300, Texture = "Textures\\Player\\player", Shape = new Polygon(new[] { new Vector2(0, 0), new Vector2(0, 10), new Vector2(10, 0) }) },
+                Player = new MovableGameObjectInitializer { X = 0, Y = 300, MoveSpeed = 700f, Texture = "Textures\\Player\\player", Shape = new Polygon(new[] { new Vector2(0, 0), new Vector2(0, 10), new Vector2(10, 0) }) },
                 Size = new Vector2(1200, 600),
             };
 

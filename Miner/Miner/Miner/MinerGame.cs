@@ -1,7 +1,9 @@
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Miner.Camera;
+using Miner.Command;
 using Miner.ContentInitializers;
 
 namespace Miner
@@ -16,6 +18,7 @@ namespace Miner
 
         public SpriteBatch SpriteBatch { get; set; }
         public Camera2D Camera { get; set; }
+        public List<ICommand> Commands { get; set; } 
 
         public MinerGame()
         {
@@ -25,6 +28,7 @@ namespace Miner
                 PreferredBackBufferHeight = AppSettings.Default.ResolutionY
             };
 
+            Commands = new List<ICommand>();
             Content.RootDirectory = "Content";
         }
 

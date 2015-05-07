@@ -78,7 +78,14 @@
       <DependentUpon>AppSettings.settings</DependentUpon>
     </Compile>
     <Compile Include="Camera\Camera2D.cs" />
+    <Compile Include="Command\ICommand.cs" />
+    <Compile Include="Command\Handler.cs" />
+    <Compile Include="Command\JumpCommand.cs" />
+    <Compile Include="Command\MacroCommand.cs" />
+    <Compile Include="Command\MovableGameObjectCommand.cs" />
+    <Compile Include="Command\MoveCommand.cs" />
     <Compile Include="ContentInitializers\GameObjectInitializer.cs" />
+    <Compile Include="ContentInitializers\MovableGameObjectInitializer.cs" />
     <Compile Include="ContentInitializers\StageCreator.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="GameObjects\Components\DrawingComponent.cs" />

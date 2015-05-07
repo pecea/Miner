@@ -5,10 +5,10 @@ namespace Miner.GameObjects
 {
     public class Player : MovableGameObject
     {
-        public Player(MinerGame game, GameObjectInitializer initializer)
+        public Player(MinerGame game, MovableGameObjectInitializer initializer)
             : base(game, initializer)
         {
-            Input = new PlayerInputComponent(this, 700f);
+            Input = new PlayerInputComponent(this);
         }
     }
 }

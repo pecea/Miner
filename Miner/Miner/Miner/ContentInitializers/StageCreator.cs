@@ -16,24 +16,21 @@ namespace Miner.ContentInitializers
         public Vector2 Size { get; set; }
 
         [XmlElement]
-        public GameObjectInitializer Player { get; set; }
+        public MovableGameObjectInitializer Player { get; set; }
 
         [XmlArray]
         public GameObjectInitializer[] Terrain { get; set; }
 
         public static Stage Create(MinerGame game, StageLevel level)
         {
-            Stage stage;
-            XmlSerializer serializer = new XmlSerializer(typeof(StageCreator));
-
             using (var reader = new StreamReader(GetStageFilePath(level)))
             {
+                var serializer = new XmlSerializer(typeof(StageCreator));
                 var creator = (StageCreator) serializer.Deserialize(reader);
                 var objects = creator.LoadGameObjects(game, level);
-                stage = new Stage(game, level, creator.Size, objects);
-            }
 
-            return stage;
+                return new Stage(game, level, creator.Size, objects);
+            }
         }
 
         private IEnumerable<GameObject> LoadGameObjects(MinerGame game, StageLevel level)

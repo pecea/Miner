@@ -7,16 +7,11 @@ namespace Miner.GameObjects
 {
     public abstract class GameObject : DrawableGameComponent
     {
-        protected GameObject(MinerGame game)
+        protected GameObject(MinerGame game, GameObjectInitializer initializer)
             : base(game)
         {
             Drawing = new DrawingComponent(this, game.SpriteBatch);
             Physics = new PhysicsComponent(this);
-        }
-
-        protected GameObject(MinerGame game, GameObjectInitializer initializer)
-            : this(game)
-        {
             Initializer = initializer;
         }
 
@@ -30,14 +25,6 @@ namespace Miner.GameObjects
             Position = Initializer.Position;
             Physics.Shape = Initializer.Shape;
             Drawing.Texture = Game.Content.Load<Texture2D>(Initializer.Texture);
-        }
-
-        public override void Update(GameTime gameTime)
-        {
-            Physics.Update(gameTime);
-            Drawing.Update(gameTime);
-
-            base.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime)

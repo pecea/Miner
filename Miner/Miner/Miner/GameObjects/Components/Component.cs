@@ -1,9 +1,8 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Miner.Command;
 
 namespace Miner.GameObjects.Components
 {
-    public abstract class Component
+    public abstract class Component : Handler
     {
         public GameObject GameObject { get; set; }
 
@@ -11,7 +10,5 @@ namespace Miner.GameObjects.Components
         {
             GameObject = gameObject;
         }
-
-        public abstract void Update(GameTime gameTime);
     }
 }

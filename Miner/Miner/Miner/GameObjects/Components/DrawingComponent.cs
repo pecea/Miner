@@ -1,7 +1,7 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Miner.Camera;
+using Miner.Command;
 
 namespace Miner.GameObjects.Components
 {
@@ -23,13 +23,19 @@ namespace Miner.GameObjects.Components
             get { return new Vector2(GameObject.Position.X + (Width / 2), GameObject.Position.Y + (Height / 2)); }
         }
 
-        public override void Update(GameTime gameTime)
-        {
-        }
-
         public void Draw(GameTime gameTime)
         {
             _spriteBatch.Draw(Texture, GameObject.Position, null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+        }
+
+        public override bool CanHandle(ICommand command)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void Handle(ICommand command)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
